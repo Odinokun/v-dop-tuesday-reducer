@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { TaskType, Todolist } from './Todolist';
 import { AddItemForm } from './components/AddItemForm';
 import { ButtonAppBar } from './components/ButtonAppBar';
-import './App.css';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import './App.css';
 
 export type FilterType = 'all' | 'active' | 'completed';
 
@@ -15,7 +15,7 @@ export type TodolistType = {
   filter: FilterType;
 };
 
-type AllTasksType = {
+export type AllTasksType = {
   [key: string]: TaskType[];
 };
 
