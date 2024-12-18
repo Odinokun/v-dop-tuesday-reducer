@@ -10,7 +10,6 @@ export type TaskType = {
   title: string;
   isDone: boolean;
 };
-
 type PropsType = {
   todolistId: string;
   title: string;
@@ -69,7 +68,6 @@ export const Todolist: FC<PropsType> = ({
     const onEditTaskNameHandler = (title: string) => onEditTaskName(todolistId, task.id, title);
 
     return (
-      // <Box className={task.isDone ? 'is-done' : ''} key={task.id}>
       <Box key={task.id} display='flex' alignItems='center'>
         <IconButton onClick={removeTaskHandler} color='error' size='small'>
           <Delete />
