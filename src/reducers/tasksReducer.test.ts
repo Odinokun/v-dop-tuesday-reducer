@@ -1,10 +1,11 @@
-import { expect, test } from 'vitest';
+import { beforeEach, expect, test } from 'vitest';
 import { addTaskAC, removeTaskAC, tasksReducer } from './tasksReducer';
+import { AllTasksType } from '../App';
 const todolist_1 = crypto.randomUUID();
 const todolist_2 = crypto.randomUUID();
 const todolist_3 = crypto.randomUUID();
 
-const initialState = {
+const state: AllTasksType = {
   [todolist_1]: [
     { id: crypto.randomUUID(), title: 'HTML&CSS', isDone: true },
     { id: crypto.randomUUID(), title: 'JS', isDone: true },
@@ -24,6 +25,9 @@ const initialState = {
     { id: crypto.randomUUID(), title: 'The Dark Knight', isDone: true },
   ],
 };
+
+let initialState: AllTasksType;
+beforeEach(() => (initialState = state));
 
 test('target task must be delete', () => {
   const taskId = initialState[todolist_1][1].id;
